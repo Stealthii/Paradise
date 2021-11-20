@@ -44,8 +44,9 @@
 	material = "silver"
 	ring_color = "silver"
 
-/obj/item/clothing/gloves/ring/silver/blessed // todo
-	name = "blessed silver ring"
+/obj/item/clothing/gloves/ring/silver/blessed
+	name = "silver wedding ring"
+	desc = "A ring blessed by the Chaplain, as a sign of commitment to another through time and space."
 
 /obj/item/clothing/gloves/ring/gold
 	name =  "gold ring"
@@ -54,7 +55,8 @@
 	ring_color = "gold"
 
 /obj/item/clothing/gloves/ring/gold/blessed
-	name = "wedding band"
+	name = "gold wedding ring"
+	desc = "A ring blessed by the Chaplain, as a sign of commitment to another through time and space."
 
 // cheap
 /obj/item/clothing/gloves/ring/plastic
