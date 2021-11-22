@@ -24,6 +24,14 @@
 	display_name = "Silver ring"
 	path = /obj/item/clothing/gloves/ring/silver
 
+/datum/gear/gloves/silverwedring
+	display_name = "Silver wedding ring"
+	path = /obj/item/clothing/gloves/ring/silver/blessed
+
 /datum/gear/gloves/goldring
 	display_name = "Gold ring"
 	path = /obj/item/clothing/gloves/ring/gold
+
+/datum/gear/gloves/goldwedring
+	display_name = "Gold wedding ring"
+	path = /obj/item/clothing/gloves/ring/gold/blessed
