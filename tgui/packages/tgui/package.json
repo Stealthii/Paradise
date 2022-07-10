@@ -15,7 +15,7 @@
     "extract-css-chunks-webpack-plugin": "^4.6.0",
     "fg-loadcss": "^2.1.0",
     "file-loader": "^6.0.0",
-    "inferno": "^7.3.2",
+    "inferno": "^8.0.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "regenerator-runtime": "^0.13.3",
     "sass": "^1.22.12",
