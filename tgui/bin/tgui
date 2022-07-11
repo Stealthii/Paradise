@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-shopt -s globstar
+#shopt -s globstar
 shopt -s expand_aliases
 
 ## Initial set-up
