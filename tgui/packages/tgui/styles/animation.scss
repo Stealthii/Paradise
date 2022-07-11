@@ -1,0 +1,29 @@
+.inferno-animation {
+  &-enter,
+  &-leave-end { // Start and end with element collapsed and fully transparent
+    height: 0;
+    opacity: 0;
+  }
+
+  &-enter-active {
+    transition: all 0.5s ease-in;
+    pointer-events: none; /* (optional) prevent hover to fire transition events causing early termination */
+  }
+
+  &-leave-active {
+    transition: all 0.2s ease-out;
+    pointer-events: none; /* (optional) prevent hover to fire transition events causing early termination */
+  }
+
+  &-enter-end,
+  &-leave { // Animate to and from full height with full opacity
+    height: auto;
+    opacity: 1;
+  }
+
+  &-move-active {
+    /* Move animation transitions */
+    transition: transform 1.5s;
+    z-index: 1;
+  }
+}

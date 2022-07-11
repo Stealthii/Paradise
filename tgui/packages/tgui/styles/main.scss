@@ -4,6 +4,9 @@
 // Core styles
 @include meta.load-css('./reset.scss');
 
+// Animation
+@include meta.load-css('./animation.scss');
+
 // Atomic classes
 @include meta.load-css('./atomic/candystripe.scss');
 @include meta.load-css('./atomic/color.scss');
