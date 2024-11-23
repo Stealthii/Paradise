@@ -67,11 +67,10 @@ const SupermatterMonitorListView = (props, context) => {
 
 const SupermatterMonitorDataView = (props, context) => {
   const { act, data } = useBackend(context);
-  const { active, SM_integrity, SM_power, SM_ambienttemp, SM_ambientpressure } = data;
-  const gases = flow([(gases) => gases.filter((gas) => gas.amount >= 0.01), sortBy((gas) => -gas.amount)])(
+  const { active, SM_integrity, SM_power, SM_ambienttemp, SM_ambientpressure, SM_molecount } = data;
+  const gases = flow([(gases) => gases.filter((gas) => gas.volume >= 0.01), sortBy((gas) => -gas.volume)])(
     data.gases || []
   );
-  const gasMaxAmount = Math.max(1, ...gases.map((gas) => gas.amount));
   return (
     <Window width={550} height={185}>
       <Window.Content>
@@ -145,8 +144,8 @@ const SupermatterMonitorDataView = (props, context) => {
               <LabeledList>
                 {gases.map((gas) => (
                   <LabeledList.Item key={gas.name} label={getGasLabel(gas.name)}>
-                    <ProgressBar color={getGasColor(gas.name)} value={gas.amount} minValue={0} maxValue={gasMaxAmount}>
-                      {toFixed(gas.amount, 2) + '%'}
+                    <ProgressBar color={getGasColor(gas.name)} value={gas.volume} minValue={0} maxValue={SM_molecount}>
+                      {toFixed((gas.volume / SM_molecount) * 100, 2) + '%'}
                     </ProgressBar>
                   </LabeledList.Item>
                 ))}
