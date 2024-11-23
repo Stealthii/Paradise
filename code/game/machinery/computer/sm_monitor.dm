@@ -58,21 +58,12 @@
 		data["SM_multiplier"] = active.mole_crunch_multiplier
 		//data["SM_EPR"] = round((air.total_moles / air.group_multiplier) / 23.1, 0.01)
 		var/list/gasdata = list()
-		var/TM = air.total_moles()
-		if(TM)
-			gasdata.Add(list(list("name"= "Oxygen", "amount" = air.oxygen(), "portion" = round(100 * air.oxygen() / TM, 0.01))))
-			gasdata.Add(list(list("name"= "Carbon Dioxide", "amount" = air.carbon_dioxide(), "portion" = round(100 * air.carbon_dioxide() / TM, 0.01))))
-			gasdata.Add(list(list("name"= "Nitrogen", "amount" = air.nitrogen(), "portion" = round(100 * air.nitrogen() / TM, 0.01))))
-			gasdata.Add(list(list("name"= "Plasma", "amount" = air.toxins(), "portion" = round(100 * air.toxins() / TM, 0.01))))
-			gasdata.Add(list(list("name"= "Nitrous Oxide", "amount" = air.sleeping_agent(), "portion" = round(100 * air.sleeping_agent() / TM, 0.01))))
-			gasdata.Add(list(list("name"= "Agent B", "amount" = air.agent_b(), "portion" = round(100 * air.agent_b() / TM, 0.01))))
-		else
-			gasdata.Add(list(list("name"= "Oxygen", "amount" = 0, "portion" = 0)))
-			gasdata.Add(list(list("name"= "Carbon Dioxide", "amount" = 0,"portion" = 0)))
-			gasdata.Add(list(list("name"= "Nitrogen", "amount" = 0,"portion" = 0)))
-			gasdata.Add(list(list("name"= "Plasma", "amount" = 0,"portion" = 0)))
-			gasdata.Add(list(list("name"= "Nitrous Oxide", "amount" = 0,"portion" = 0)))
-			gasdata.Add(list(list("name"= "Agent B", "amount" = 0,"portion" = 0)))
+		gasdata.Add(list(list("name"= "Oxygen", "moles" = air.oxygen())))
+		gasdata.Add(list(list("name"= "Carbon Dioxide", "moles" = air.carbon_dioxide())))
+		gasdata.Add(list(list("name"= "Nitrogen", "moles" = air.nitrogen())))
+		gasdata.Add(list(list("name"= "Plasma", "moles" = air.toxins())))
+		gasdata.Add(list(list("name"= "Nitrous Oxide", "moles" = air.sleeping_agent())))
+		gasdata.Add(list(list("name"= "Agent B", "moles" = air.agent_b())))
 		data["gases"] = gasdata
 	else
 		var/list/SMS = list()
