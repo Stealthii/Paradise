@@ -170,15 +170,19 @@ const SupermatterMonitorDataView = (props, context) => {
               title="Gases"
               buttons={<Button icon="arrow-left" content="Back" onClick={() => act('back')} />}
             >
-              <LabeledList>
+              <Table lineHeight="24px">
                 {gases.map((gas) => (
-                  <LabeledList.Item key={gas.name} label={getGasLabel(gas.name)}>
-                    <ProgressBar color={getGasColor(gas.name)} value={gas.moles} minValue={0} maxValue={SM_moles}>
-                      {toFixed(gas.moles) + ' mol (' + toFixed((gas.moles / SM_moles) * 100, 2) + '%)'}
-                    </ProgressBar>
-                  </LabeledList.Item>
+                  <Table.Row key={gas.name}>
+                    <Table.Cell color="label">{getGasLabel(gas.name)}</Table.Cell>
+                    <Table.Cell textAlign="right">{toFixed(gas.moles, 0) + ' mol'}</Table.Cell>
+                    <Table.Cell collapsing width="120px">
+                      <ProgressBar color={getGasColor(gas.name)} value={gas.moles} minValue={0} maxValue={SM_moles}>
+                        {toFixed((gas.moles / SM_moles) * 100, 2) + '%'}
+                      </ProgressBar>
+                    </Table.Cell>
+                  </Table.Row>
                 ))}
-              </LabeledList>
+              </Table>
             </Section>
           </Stack.Item>
         </Stack>
